@@ -1,0 +1,39 @@
+    1  ls
+    2  dir
+    3  pwd
+    4  ls
+    5  cd Documents/ls
+    6  cd Documents/
+    7  ls
+    8  cd ProyectosPHP/
+    9  ls
+   10  git clone https://github.com/rbqc/GABINETE.git
+   11  sudogit clone https://github.com/rbqc/GABINETE.git
+   12  sudog it clone https://github.com/rbqc/GABINETE.git
+   13   gt clone https://github.com/rbqc/GABINETE.git
+   14   gti clone https://github.com/rbqc/GABINETE.git
+   15  git clone https://github.com/rbqc/GABINETE.git
+   16  git branch
+   17  git branch -h
+   18  git checkout
+   19  ls
+   20  cd GABINETE/
+   21  git branch 
+   22  git branch -h
+   23  git checkout -b dougla
+   24  git branch list
+   25  git branch -a
+   26  git status
+   27  ls
+   28  git pool
+   29  git pull
+   30  git pull origin master
+   31  ls
+   32  cd c/xampp/htdocs
+   33  cd c:/xampp/htdocs
+   34  cd GABINETE/
+   35  git status
+   36  git pull origin master
+   37  git status
+   38  git add .
+   39  history > comandos.txt

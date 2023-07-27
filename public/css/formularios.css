@@ -1,0 +1,59 @@
+
+/*root { 
+    display: block;
+}*/
+
+/*Efectos para los formularios*/
+.contenido fieldset {
+	/*width: 30%; 
+	text-align: center;
+	margin: auto;
+	padding: 2%;*/
+	width: 30%;
+	text-align: center;
+    padding: 12px 20px;
+    margin: auto;
+    display: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+    box-sizing: border-box;
+}
+
+.contenido form label {
+	margin: 2%;
+    width: 5%;
+    float: left;
+}
+
+.contenido form input { 
+    /*padding: 1%;
+    margin: 2%;*/
+
+    width: 100%;
+
+    color: none;
+    padding: 1%;
+    margin: 2%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    
+}
+
+/*Para los valores obtenidos */
+.contenido .values {
+	/*width: 30%; 
+	margin: auto;
+	text-align: center;
+	border: 1px solid grey;
+	border-radius: 5px;*/
+
+	width: 30%;
+    padding: 12px 20px;
+    margin: auto;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}

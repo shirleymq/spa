@@ -1,0 +1,82 @@
+/*img{
+	width:50px;
+    height:50px;
+}
+body{
+	background-image: url(img_publicidad/logo_informaticaSistemas);
+}*/
+
+* {
+  margin: 0;
+  padding: 0;
+
+}
+.sin_padding{
+	padding: 0;
+}
+.azul{
+  background:    #09073b  ;
+}
+
+
+
+nav li {
+  color: white;
+  cursor: pointer;
+}
+
+
+.footer{
+  width: 100%;
+  bottom: 0;
+  position: fixed;
+
+}
+.degradado{
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#380137+0,8f0222+44,8f0222+56,380137+100 */
+background: #380137; /* Old browsers */
+background: -moz-linear-gradient(left, #380137 0%, #8f0222 44%, #8f0222 56%, #380137 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, #380137 0%,#8f0222 44%,#8f0222 56%,#380137 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, #380137 0%,#8f0222 44%,#8f0222 56%,#380137 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#380137', endColorstr='#380137',GradientType=1 ); /* IE6-9 */
+}
+.sin_paddingcarousel{
+  padding-left: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.portada{
+   background-repeat: no-repeat; 
+   background-attachment: scroll;
+   background-position: 50% 50%;
+   width: 100% ;
+   text-align: center;
+ 
+}
+
+table.tabla {
+
+  background-color: #1AADB5;
+}
+
+div.centerTable{
+        text-align: center;
+}
+
+ 
+
+div.centerTable table {
+       margin: 0 auto;
+       text-align: left;
+}
+
+/*.contenedor {
+  padding: 1% 0;
+}
+.centralizador {
+  padding: 2% 0;
+}*/
+
+.monitor tr td {
+  border-color:white;
+}
