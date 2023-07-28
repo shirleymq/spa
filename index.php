@@ -241,17 +241,20 @@
  					   <span class="sr-only">Next</span>
  					 </a>		
   			</div>
-  			<div class="col-md-3 sin_padding" style="height: 40em; background:  url('uploads/fondoF2.jpg');">
-  				<br>
-  				<center><img src="uploads/umss.png" width="80%"></center>
-  				<center><img src="uploads/infsis-rc.png" width="80%"></center>
-  			</div>
+  			<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 sin_padding" style="height: 40em; background:  url('uploads/fondoF2.jpg');">
+				<br>
+				<center><img src="uploads/umss.png" width="80%"></center>
+				<center><img src="uploads/infsis-rc.png" width="80%"></center>
+			</div>
   		</div>
   
 
     </section>
 
-    <footer>
+    
+
+</body>
+<footer>
 			
 
 			<div class="footer" style="height: 45px">
@@ -283,8 +286,6 @@
 			
 	</footer>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-</body>
+	<script src="public/js/jquery.min.js"></script>
+	<script src="public/js/bootstrap.min.js"></script>
 </html>

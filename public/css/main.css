@@ -555,3 +555,21 @@ iframe {
     padding-right: 15px;
   }
 }
+
+@media (max-width: 992px) {
+  .col-md-3 {
+    /* Aquí puedes agregar o modificar estilos para esta clase cuando la pantalla tiene un ancho de 992px o menos */
+    height: auto;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .col-md-3 {
+    /* Aquí puedes agregar o modificar estilos para esta clase cuando la pantalla tiene un ancho de 768px o menos */
+    height: auto;
+    background-size: cover;
+    background-position: center;
+  }
+}
