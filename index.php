@@ -28,109 +28,107 @@
 
 <body onload="mueveReloj()" style="overflow-x: hidden;">
 
-				<header class="azul">
-					<div class="navbar  navbar-expand-lg azul">
-						
-
-						<div class="col-md-9" align="center">
-							<h1 align="center" class="display-5" style="color: white ; font-family: Georgia; font-weight: bold;" >DEPARTAMENTO DE INFORMATICA Y SISTEMAS</h1>
-						</div>
-
-						<div class=" col-md-2 offset-md-0" align="center">
-
-									<form name="form_reloj">
-										
-    										<input type="text" name="reloj" size="7" class="display-4 text-center" onfocus="window.document.form_reloj.reloj.blur()" style="background-color:   #09073b  ; color: white; border:#1a045a; font-family: Roboto-Bold;">
-    										
-									</form>
-						</div>
-
-						
-						
-  						<div class="col-md-1" align="right" >
-
-  							<nav>
-
-							<ul style="list-style: none, background: white;">
-
-								<li class="nav-item dropdown">
-							        <a class="nav-link dropdown-toggle" style="font-size: 2em" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							         </a>
-							        <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="">
-							        <?php 
-							         	if (!isset($_SESSION['login_nombre'])){?>
-							        	<li><a class="dropdown-item " data-toggle="modal" data-target="#modalLogin" style="color: #6145a5; font-family: Roboto-Light"><b>Sesion</b></a></li>
-							        <div class="dropdown-divider"></div>
-							        <?php } ?>
-							          	<li><a class="dropdown-item " href="views/avisos/listaAvisos.php" style="color:  #6145a5; font-family: Roboto-Light"><b>Avisos<b></a></li>
-							          	<li><a class="dropdown-item " href="views/publicidades/listaPublicidades.php" style="color: #6145a5; font-family: Roboto-Light"><b>Anuncios</b></a></li>
-							         <?php 
-							         	if (isset($_SESSION['login_nombre'])){
-							         		if(($_SESSION['login_tipo_usuario'])=="ADMIN"){
-							         ?>
-							         <div class="dropdown-divider"></div>
-							         	<li><a class="dropdown-item " href="views/registros/listaBitacora.php" style="color: #6145a5; font-family: Roboto-Light"><b>Bitacora</b></a></li>
-							         	<li><a class="dropdown-item " href="views/usuarios/listaUsuarios.php" style="color: #6145a5; font-family: Roboto-Light"><b>Usuarios</b></a></li>
-							         		<?php } ?>
-							         <div class="dropdown-divider"></div>
-							          	<li><a class="dropdown-item " href="controllers/logout.php" style="color: #6145a5; font-family: Roboto-Light"><b>Logout</b></a></li>
-
-							      	<?php } ?>
-
-							        </ul>
-							    </li>
-
-							</ul>
-							</nav>
-						</div>
-
-							<div class="modal fade " id="modalLogin" role="dialog">
-								<div class="modal-dialog">
-									<div class="modal-content fondoSesion">
-										<div class="moddal-header">
-											<button type="button" class="close" data-dismiss="modal" style="padding-right: 1.5rem;padding-top: 1rem;">&times;</button>
-										</div>
-										<div class="modal-body" >
-											<span class="login100-form-title p-b-55">
-														Iniciar sesion
-													</span>
-											<div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
-												<form class="login100-form validate-form" action="controllers/autentificar.php" method="POST">	
-
-													<div class="wrap-input100 validate-input m-b-16">
-														<input class="input100" type="text" name="cuenta" placeholder="Email">
-														<span class="focus-input100"></span>
-														<span class="symbol-input100">
-															<span class="lnr lnr-envelope"></span>
-														</span>
-													</div>
-
-													<div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
-														<input class="input100" type="password" name="contrasenia" placeholder="Password" required="">
-														<span class="focus-input100"></span>
-														<span class="symbol-input100">
-															<span class="lnr lnr-lock"></span>
-														</span>
-													</div>
-													
-													<div class="container-login100-form-btn p-t-25">
-														<button class="login100-form-btn" name="auth">
-															Ingresar
-														</button>
-													</div>
-
-													</form>
-													</div>
-												
-											</div>
-											
-										</div>
-									</div>
-								</div>
-
-					</div>
-				</header>
+	<header class="azul">
+		<div class="navbar  navbar-expand-lg azul">
 			
+			<div class="col-md-9" align="center">
+				<h1 align="center" class="display-5" style="color: white ; font-family: Georgia; font-weight: bold;" >DEPARTAMENTO DE INFORMATICA Y SISTEMAS</h1>
+			</div>
+
+			<div class=" col-md-2 offset-md-0" align="center">
+
+						<form name="form_reloj">
+							
+								<input type="text" name="reloj" size="7" class="display-4 text-center" onfocus="window.document.form_reloj.reloj.blur()" style="background-color:   #09073b  ; color: white; border:#1a045a; font-family: Roboto-Bold;">
+								
+						</form>
+			</div>
+
+			
+			
+			<div class="col-md-1" align="right" >
+
+				<nav>
+
+				<ul style="list-style: none, background: white;">
+
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" style="font-size: 2em" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							</a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="">
+						<?php 
+							if (!isset($_SESSION['login_nombre'])){?>
+							<li><a class="dropdown-item " data-toggle="modal" data-target="#modalLogin" style="color: #6145a5; font-family: Roboto-Light"><b>Sesion</b></a></li>
+						<div class="dropdown-divider"></div>
+						<?php } ?>
+							<li><a class="dropdown-item " href="views/avisos/listaAvisos.php" style="color:  #6145a5; font-family: Roboto-Light"><b>Avisos<b></a></li>
+							<li><a class="dropdown-item " href="views/publicidades/listaPublicidades.php" style="color: #6145a5; font-family: Roboto-Light"><b>Anuncios</b></a></li>
+							<?php 
+							if (isset($_SESSION['login_nombre'])){
+								if(($_SESSION['login_tipo_usuario'])=="ADMIN"){
+							?>
+							<div class="dropdown-divider"></div>
+							<li><a class="dropdown-item " href="views/registros/listaBitacora.php" style="color: #6145a5; font-family: Roboto-Light"><b>Bitacora</b></a></li>
+							<li><a class="dropdown-item " href="views/usuarios/listaUsuarios.php" style="color: #6145a5; font-family: Roboto-Light"><b>Usuarios</b></a></li>
+								<?php } ?>
+							<div class="dropdown-divider"></div>
+							<li><a class="dropdown-item " href="controllers/logout.php" style="color: #6145a5; font-family: Roboto-Light"><b>Logout</b></a></li>
+
+						<?php } ?>
+
+						</ul>
+					</li>
+
+				</ul>
+				</nav>
+			</div>
+
+			<div class="modal fade " id="modalLogin" role="dialog">
+				<div class="modal-dialog">
+					<div class="modal-content fondoSesion">
+						<div class="moddal-header">
+							<button type="button" class="close" data-dismiss="modal" style="padding-right: 1.5rem;padding-top: 1rem;">&times;</button>
+						</div>
+						<div class="modal-body" >
+							<span class="login100-form-title p-b-55">
+								Iniciar sesion
+							</span>
+							<div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
+								<form class="login100-form validate-form" action="controllers/autentificar.php" method="POST">	
+
+									<div class="wrap-input100 validate-input m-b-16">
+										<input class="input100" type="text" name="cuenta" placeholder="Email">
+										<span class="focus-input100"></span>
+										<span class="symbol-input100">
+											<span class="lnr lnr-envelope"></span>
+										</span>
+									</div>
+
+									<div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
+										<input class="input100" type="password" name="contrasenia" placeholder="Password" required="">
+										<span class="focus-input100"></span>
+										<span class="symbol-input100">
+											<span class="lnr lnr-lock"></span>
+										</span>
+									</div>
+									
+									<div class="container-login100-form-btn p-t-25">
+										<button class="login100-form-btn" name="auth">
+											Ingresar
+										</button>
+									</div>
+
+								</form>
+							</div>
+								
+						</div>
+							
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</header>			
 
     <section>
 
@@ -141,7 +139,6 @@
   					 <div class="carousel-item active" style="height: 40em">
   					    <img class="d-block w-100" src="uploads/portada.jpg" width="100%" height="100%">
  					 </div>
-
  					   
  					   		<?php
 								$avisos = listaAvisosMonitor();
@@ -196,38 +193,38 @@
  					   				</div>
  					   			</div>
  					   		<?php
-		            	endforeach;
-        	    		?>
-        	    		<?php
-   										$imagenes = listaImagenesMonitor();
+								endforeach;
+							?>
+							<?php
+								$imagenes = listaImagenesMonitor();
 
-   										foreach ($imagenes as $imagen):
-   									?>
-   										<div class="carousel-item">
-   											<div class="row">
-   												<?php if ($imagen['titulo']!=null){?>
-   												<div class="col-md-4">
-   													<br/><br/><br/>
-   												<table class="table monitor">
-   													<tr align="center" >
-            	    									<td colspan="2" style="text-transform: uppercase; font-family: Georgia ;"><h2 class="display-4" align="center"><b><?php echo $imagen['titulo'] ?></b></h2>
-            	    									</td>
-													</tr>
-												</table>	
-   												</div>
-   												<div class="col-md-8" style="height: 40em">
-   													<img class="d-block" width="100%" height="650rem" src="<?php echo $imagen['ubicacion']?>">
-   												</div>
-   											<?php } else{?>
-   												<div class="col-md-12" style="height: 40em">
-   													<img class="d-block" width="100%" height="650rem" src="<?php echo $imagen['ubicacion']?>">
-   												</div>
-   											<?php }?>
-   											</div>
-       									</div>
-   									<?php
-   										endforeach;
-   									?>
+								foreach ($imagenes as $imagen):
+							?>
+							<div class="carousel-item">
+								<div class="row">
+									<?php if ($imagen['titulo']!=null){?>
+									<div class="col-md-4">
+										<br/><br/><br/>
+									<table class="table monitor">
+										<tr align="center" >
+											<td colspan="2" style="text-transform: uppercase; font-family: Georgia ;"><h2 class="display-4" align="center"><b><?php echo $imagen['titulo'] ?></b></h2>
+											</td>
+										</tr>
+									</table>	
+									</div>
+									<div class="col-md-8" style="height: 40em">
+										<img class="d-block" width="100%" height="650rem" src="<?php echo $imagen['ubicacion']?>">
+									</div>
+								<?php } else{?>
+									<div class="col-md-12" style="height: 40em">
+										<img class="d-block" width="100%" height="650rem" src="<?php echo $imagen['ubicacion']?>">
+									</div>
+								<?php }?>
+								</div>
+							</div>
+							<?php
+								endforeach;
+							?>
 
  					   	</div>
   					</div>
