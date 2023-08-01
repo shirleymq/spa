@@ -11,20 +11,34 @@ body{
   padding: 0;
 
 }
+
 .sin_padding{
 	padding: 0;
+  background: linear-gradient(to right, #89cff0, white);
 }
+
 .azul{
   background:    #09073b  ;
 }
 
+.vertical-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-align: center;
+  height: 11em; /* Ajusta según tu necesidad */
+}
 
+.text-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
 
 nav li {
   color: white;
   cursor: pointer;
 }
-
 
 .footer{
   width: 100%;
@@ -32,6 +46,7 @@ nav li {
   position: fixed;
 
 }
+
 .degradado{
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#380137+0,8f0222+44,8f0222+56,380137+100 */
 background: #380137; /* Old browsers */

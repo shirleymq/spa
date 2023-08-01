@@ -29,7 +29,7 @@
 <body onload="mueveReloj()" style="overflow-x: hidden;">
 
 	<header class="azul">
-		<div class="navbar  navbar-expand-lg azul">
+		<div class="navbar  navbar-expand-lg azul" style="height: 10vh">
 			
 			<div class="col-md-9" align="center">
 				<h1 align="center" class="display-5" style="color: white ; font-family: Georgia; font-weight: bold;" >DEPARTAMENTO DE INFORMATICA Y SISTEMAS</h1>
@@ -43,8 +43,6 @@
 								
 						</form>
 			</div>
-
-			
 			
 			<div class="col-md-1" align="right" >
 
@@ -133,19 +131,20 @@
     <section>
 
 		<div class="row">
- 			<div class="col-md-9 col-sm-12 col-xs-12 sin_padding" style="background: white">
+ 			<div class="col-md-9 col-sm-12 col-xs-12 sin_padding">
     			<div id="carouselExampleControls" class="carousel slide " data-ride="carousel" data-interval="10000">
   					<div class="carousel-inner">
-  					 <div class="carousel-item active" style="height: 40em">
-  					    <img class="d-block w-100" src="uploads/portada.jpg" width="100%" height="100%">
- 					 </div>
+						<div class="carousel-item active" style="height: 85vh">
+							<img class="d-block w-100" src="uploads/portada.jpg" width="100%" height="100%">
+						</div>
  					   
  					   		<?php
 								$avisos = listaAvisosMonitor();
     	        	    		foreach ($avisos as $aviso):
 	        	    		?>
- 					   			<div class="carousel-item" style="height: 40em">
- 					   				<div class="contenedor">
+ 					   			
+							<div class="carousel-item" style="height: 85vh">
+								<div class="contenedor">
  					   					<div class="centralizador">
  
  					   				<table class="table monitor">
@@ -153,7 +152,7 @@
         	        						<td colspan="2" style="font-family: Lucida;"><?php echo $aviso['FECHA_HORA'] ?></td> 
 	        	      					</tr>
 	    	          					<tr align="center" >
-            	    						<td colspan="2" style=" text-transform: uppercase; font-family: Georgia ;"><h2 class="display-4"><b><?php echo $aviso['TITULO'] ?></b></h2></td>
+            	    						<td colspan="2" style=" text-transform: uppercase; font-family: Georgia; background: #89cff0 ;"><h2 class="display-4"><b><?php echo $aviso['TITULO'] ?></b></h2></td>
 										</tr>
 										<tr>
 											<td></td>
@@ -203,21 +202,36 @@
 							<div class="carousel-item">
 								<div class="row">
 									<?php if ($imagen['titulo']!=null){?>
-									<div class="col-md-4">
+									<div class="col-md-4 text-container">
 										<br/><br/><br/>
-									<table class="table monitor">
-										<tr align="center" >
-											<td colspan="2" style="text-transform: uppercase; font-family: Georgia ;"><h2 class="display-4" align="center"><b><?php echo $imagen['titulo'] ?></b></h2>
-											</td>
-										</tr>
-									</table>	
+										<table class="table monitor">
+											<tr align="center" >
+												<td colspan="2" style="text-transform: uppercase; font-family: Georgia ;">
+													<?php
+													$titulo = $imagen['titulo'];
+													$palabras = explode(' ', $titulo); // divide el título en palabras
+													$clase = '';
+
+													foreach ($palabras as $palabra) {
+														if (strlen($palabra) > 9) {
+															$clase = 'vertical-text';
+															break;
+														}
+													}
+													?>
+													<h2 class="display-4  <?php echo $clase; ?>">
+														<b><?php echo $imagen['titulo'] ?></b>
+													</h2>
+												</td>
+											</tr>
+										</table>	
 									</div>
-									<div class="col-md-8" style="height: 40em">
-										<img class="d-block" width="100%" height="650rem" src="<?php echo $imagen['ubicacion']?>">
+									<div class="col-md-8" style="height: 85vh">
+										<img class="d-block" width="100%" height="100%" src="<?php echo $imagen['ubicacion']?>">
 									</div>
 								<?php } else{?>
-									<div class="col-md-12" style="height: 40em">
-										<img class="d-block" width="100%" height="650rem" src="<?php echo $imagen['ubicacion']?>">
+									<div class="col-md-12" style="height: 85vh">
+										<img class="d-block" width="100%" height="100%" src="<?php echo $imagen['ubicacion']?>">
 									</div>
 								<?php }?>
 								</div>
@@ -238,51 +252,45 @@
  					   <span class="sr-only">Next</span>
  					 </a>		
   			</div>
-  			<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 sin_padding" style="height: 40em; background:  url('uploads/fondoF2.jpg');">
+  			<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 sin_padding" style="height: 85vh; background:  url('uploads/fondoF2.jpg');">
 				<br>
-				<center><img src="uploads/umss.png" width="80%"></center>
-				<center><img src="uploads/infsis-rc.png" width="80%"></center>
+				<center><img src="uploads/umss.png" width="75%"></center>
+				<center><img src="uploads/infsis-rc.png" width="75%"></center>
 			</div>
   		</div>
   
 
     </section>
-
-    
-
 </body>
+
 <footer>
-			
+	<div class="footer" style="height: 5vh">
+		<div class="row">
+			<div class="col-md-3 sin_padding" align="center" style="background:  #640717 ; height: 100%  ;">
+				
+				<div id="TT_yvBgrxtxY2EcfjpANAVzzDDDztaATff2bd1t1cioa1D"></div>
+				<script type="text/javascript" src="https://www.tutiempo.net/s-widget/l_yvBgrxtxY2EcfjpANAVzzDDDztaATff2bd1t1cioa1D"></script>
 
-			<div class="footer" style="height: 45px">
-				<div class="row">
-					<div class="col-md-3 sin_padding" align="center" style="background:  #640717 ; height: 100%  ;">
-						
-						<div id="TT_yvBgrxtxY2EcfjpANAVzzDDDztaATff2bd1t1cioa1D"></div>
-						<script type="text/javascript" src="https://www.tutiempo.net/s-widget/l_yvBgrxtxY2EcfjpANAVzzDDDztaATff2bd1t1cioa1D"></script>
-
-					</div>
-					<div class="col-md-9 col-xs-12 sin_padding" style="height: 100%">
-						<MARQUEE bgcolor=#ccd1d1 style="height: 45px">
-						<h2 style="color:black; font-family:Roboto-Light; font-weight: bold">
-							<script>
-						
-								var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
-								var diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
-								var f=new Date();
-								document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
-									
-							</script>
-
-						</h2>
-						</MARQUEE>
-					</div>
-				</div>
 			</div>
+			<div class="col-md-9 col-xs-12 sin_padding" style="height: 100%">
+				<MARQUEE bgcolor=#ccd1d1 style="height: 45px">
+				<h2 style="color:black; font-family:Roboto-Light; font-weight: bold">
+					<script>
+				
+						var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+						var diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
+						var f=new Date();
+						document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
+							
+					</script>
 
+				</h2>
+				</MARQUEE>
+			</div>
+		</div>
+	</div>
 			
-	</footer>
-
+</footer>
 	<script src="public/js/jquery.min.js"></script>
 	<script src="public/js/bootstrap.min.js"></script>
 </html>
