@@ -1,4 +1,9 @@
 <?php include('../../controllers/controladorAvisos.php'); ?>
+<?php include ("../../util/funciones.php");?>
+<?php
+  validarSesion();
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -67,7 +72,7 @@
                 <td>Mostrarse       </td>  
                 <?php
                 if (isset($_SESSION['login_nombre'])){?>
-                <td>Herramientas</td>
+                <td>Acciones</td>
                 <?php }?>
               </tr>
             </thead>

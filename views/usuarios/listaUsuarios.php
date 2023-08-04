@@ -1,5 +1,10 @@
 <?php session_start();?>
 <?php include('../../controllers/controladorUsuarios.php'); ?>
+<?php include ("../../util/funciones.php");?>
+<?php
+  validarSesion();
+?>
+
 <!DOCTYPE html>
 <html>
     <head>

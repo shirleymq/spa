@@ -7,7 +7,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<script type="text/javascript" src="reloj.js"></script>
+	<script type="text/javascript" src="util/reloj.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	
@@ -32,7 +32,7 @@
 		<div class="navbar  navbar-expand-lg azul" style="height: 10vh">
 			
 			<div class="col-md-9" align="center">
-				<h1 align="center" class="display-5" style="color: white ; font-family: Georgia; font-weight: bold;" >DEPARTAMENTO DE INFORMATICA Y SISTEMAS</h1>
+				<h2 align="center" class="display-6" style="color: white ; font-family: Georgia; font-weight: bold;" >DEPARTAMENTO DE INFORMATICA Y SISTEMAS</h2>
 			</div>
 
 			<div class=" col-md-2 offset-md-0" align="center">
@@ -143,7 +143,7 @@
     	        	    		foreach ($avisos as $aviso):
 	        	    		?>
  					   			
-							<div class="carousel-item" style="height: 85vh">
+							<div class="carousel-item fondo-avisos" style="height: 85vh">
 								<div class="contenedor">
  					   					<div class="centralizador">
  
@@ -152,7 +152,9 @@
         	        						<td colspan="2" style="font-family: Lucida;"><?php echo $aviso['FECHA_HORA'] ?></td> 
 	        	      					</tr>
 	    	          					<tr align="center" >
-            	    						<td colspan="2" style=" text-transform: uppercase; font-family: Georgia; background: #89cff0 ;"><h2 class="display-4"><b><?php echo $aviso['TITULO'] ?></b></h2></td>
+            	    						<td colspan="2" >
+												<h2 class="display-4 titulo-aviso"><b><?php echo $aviso['TITULO'] ?></b></h2>
+											</td>
 										</tr>
 										<tr>
 											<td></td>
@@ -199,7 +201,7 @@
 
 								foreach ($imagenes as $imagen):
 							?>
-							<div class="carousel-item">
+							<div class="carousel-item fondo-titulo-img">
 								<div class="row">
 									<?php if ($imagen['titulo']!=null){?>
 									<div class="col-md-4 text-container">
@@ -226,8 +228,8 @@
 											</tr>
 										</table>	
 									</div>
-									<div class="col-md-8" style="height: 85vh">
-										<img class="d-block" width="100%" height="100%" src="<?php echo $imagen['ubicacion']?>">
+									<div class="col-md-8 sin-separacion" style="height: 85vh;">
+										<img class="d-block img-border" width="100%" height="100%" src="<?php echo $imagen['ubicacion']?>">
 									</div>
 								<?php } else{?>
 									<div class="col-md-12" style="height: 85vh">
@@ -254,8 +256,8 @@
   			</div>
   			<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 sin_padding" style="height: 85vh; background:  url('uploads/fondoF2.jpg');">
 				<br>
-				<center><img src="uploads/umss.png" width="75%"></center>
-				<center><img src="uploads/infsis-rc.png" width="75%"></center>
+				<center><img src="uploads/umss.png" width="80%"></center>
+				<center><img src="uploads/infsis-rc.png" width="80%"></center>
 			</div>
   		</div>
   

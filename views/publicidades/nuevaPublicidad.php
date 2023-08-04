@@ -1,4 +1,8 @@
-
+<?php include ("../../controllers/controladorPublicidades.php");?>
+<?php include ("../../util/funciones.php");?>
+<?php
+  validarSesion();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -58,6 +62,7 @@
                 <div class="form-group col-md-12">
                     <label>Titulo: </label>
                     <input type="text" class="form-control" name="titulo">
+                    <div id="error-message-titulo" style="display: none; color: red;">El título no debe tener más de 42 caracteres</div>
                 </div>
               </div>
 
@@ -69,5 +74,19 @@
             </form>
         </section>
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+          $(document).ready(function() {
+            $("form").on('submit', function(event) {
+              var titulo = $("input[name='titulo']").val();
+              if(titulo.length > 42){
+                event.preventDefault(); 
+                $("#error-message-titulo").show();
+              } else {
+                $("#error-message-titulo").hide();
+              }
+            });
+          });
+        </script>
     </body>
 </html>

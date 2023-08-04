@@ -1,5 +1,4 @@
 <?php include('../../controllers/controladorPublicidades.php'); ?>
-<?php session_start();?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -45,10 +44,6 @@
                 
           </div>
         </div>
-
-        
-
-
       </nav>
     </header>
 
@@ -107,7 +102,8 @@
         </center>
       </div>
     </section>
-    <script src="../../public/js/jquery.js"></script>
-    <script src="../../public/js/bootstrap.js"></script>
+    
+    <script src="public/css/js/jquery.js"></script>
+    <script src="public/css/js/bootstrap.js"></script>
   </body>
 </html>

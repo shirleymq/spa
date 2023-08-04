@@ -1,6 +1,5 @@
 <?php session_start();?>
 <?php 
-	
 	require_once('conexionDB.php');
 
 	if (isset($_REQUEST['guardar'])) {

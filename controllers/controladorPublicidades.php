@@ -1,3 +1,8 @@
+<?php 
+if(session_status() == PHP_SESSION_NONE){
+    // session hasn't started
+    session_start();
+}?>
 <?php
 	require_once('conexionDB.php');
 
@@ -11,7 +16,7 @@
 
 		registrarImagen($titulo, $ubicacion);
 
-		header('Location: ../index.php');
+		header('Location: ../');
 		
 	}
 

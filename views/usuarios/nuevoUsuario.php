@@ -1,5 +1,10 @@
 <?php session_start();?>
 <?php include('../../controllers/controladorUsuarios.php'); ?>
+<?php include ("../../util/funciones.php");?>
+<?php
+  validarSesion();
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -80,7 +85,7 @@
                 </div>
 
                 <div class="form-group col-md-6" align="left">
-                  <label>Contrasenia:</label>
+                  <label>Contraseña:</label>
                   <input type="password" name="contrasenia" class="form-control" placeholder="Contrasenia de Usuario" required>
                 </div>
 

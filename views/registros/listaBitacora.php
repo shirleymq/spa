@@ -1,4 +1,9 @@
 <?php include('../../controllers/controladorAvisos.php'); ?>
+<?php include ("../../util/funciones.php");?>
+<?php
+  validarSesion();
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
