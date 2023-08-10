@@ -109,8 +109,8 @@ if(session_status() == PHP_SESSION_NONE){
 					}
 				}
 			} else {
-				echo 'ERROR DE EXTENCION, 
-				     SELECCIONE UN ARCHIVO CON EXTENCION:
+				echo 'ERROR DE EXTENSION, 
+				     SELECCIONE UN ARCHIVO CON EXTENSION:
 				     jpg, jpeg, png <br>
 						<a href="../views/publicidades/nuevaPublicidad.php">formulario de publicidad nuevo</a>';
 			}

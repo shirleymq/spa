@@ -57,12 +57,14 @@
                     <div class="form-group col-md-6">
                       <label>Titulo: </label>
                       <input type="text" class="form-control" name="titulo" value="<?php echo $aviso['TITULO']?>" required>
+                      <div id="error-message-titulo" style="display: none; color: red;">El título no debe tener más de 45 caracteres</div>
                     </div>
 
                   
                     <div class="form-group col-md-6">
                       <label>Autor: </label>
                       <input type="text" class="form-control" placeholder= "Opcional" name="subtitulo" value="<?php echo $aviso['SUBTITULO']?>">
+                      <div id="error-message-autor" style="display: none; color: red;">El título no debe tener más de 35 caracteres</div>
                     </div>
               </div>
 
@@ -103,7 +105,8 @@
                   <div class="form-group col-md-12">
                       <label>Contenido: </label>
                       <textarea class="form-control" name="descripcion" rows="5" cols="75" required=""><?php echo $aviso['CONTENIDO']?></textarea>
-                  </div>
+                      <div id="error-message-contenido" style="display: none; color: red;">El contenido no debe tener más de 280 caracteres</div>
+                    </div>
               </div>
 
               <div class="form-row">
@@ -128,5 +131,36 @@
               <input type="submit" name="editar" value="Guardar" class="btn btn-success">
             </form>
         </section>
+
+        <script src="../../public/js/jquery.min.js"></script>
+        <script>
+          $(document).ready(function() {
+            $("form").on('submit', function(event) {
+              var titulo = $("input[name='titulo']").val();
+              if(titulo.length > 45){
+                event.preventDefault(); 
+                $("#error-message-titulo").show();
+              } else {
+                $("#error-message-titulo").hide();
+              }
+
+              var descripcion = $("textarea[name='descripcion']").val();
+              if(descripcion.length > 280){
+                event.preventDefault(); 
+                $("#error-message-contenido").show();
+              } else {
+                $("#error-message-contenido").hide();
+              }
+
+              var autor = $("input[name='subtitulo']").val();
+              if(autor.length > 35){
+                event.preventDefault(); 
+                $("#error-message-autor").show();
+              } else {
+                $("#error-message-autor").hide();
+              }
+            });
+          });
+        </script>
     </body>
 </html>

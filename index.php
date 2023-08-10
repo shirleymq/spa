@@ -32,7 +32,7 @@
 		<div class="navbar  navbar-expand-lg azul" style="height: 10vh">
 			
 			<div class="col-md-9" align="center">
-				<h2 align="center" class="display-6" style="color: white ; font-family: Georgia; font-weight: bold;" >DEPARTAMENTO DE INFORMATICA Y SISTEMAS</h2>
+				<h2 align="center"  style="color: white ; font-family: Georgia; font-weight: bold;" >DEPARTAMENTO DE INFORMATICA Y SISTEMAS</h2>
 			</div>
 
 			<div class=" col-md-2 offset-md-0" align="center">
@@ -145,7 +145,7 @@
  					   			
 							<div class="carousel-item fondo-avisos" style="height: 85vh">
 								<div class="contenedor">
- 					   					<div class="centralizador">
+									<div class="centralizador">
  
  					   				<table class="table monitor">
  					   					<tr align="right">
@@ -163,7 +163,7 @@
 	        	      					if (!empty($aviso['NOMBREDOC']) && !empty($aviso['NOMBREMAT'])) {	
     		        					?>
 		        	      					<tr align="center">
-        	    	    						<td width="50%"  style="font-family: Georgia; color: #09073b font-weight: bold; ", align="center"><h4><b><?php echo $aviso['NOMBREDOC'].' '.$aviso['APELLIDODOC'] ?></b></h4></td>
+        	    	    						<td width="50%"  style="font-family: Georgia; color: #110c9c font-weight: bold; ", align="center"><h4><b><?php echo $aviso['NOMBREDOC'].' '.$aviso['APELLIDODOC'] ?></b></h4></td>
             	    							<td style="font-family: Georgia; color: #09073b; font-weight: bold;" align="center"><h4><b><?php echo $aviso['NOMBREMAT'] ?></b></h4></td>
 	            		   					</tr>
 	            						<?php
@@ -179,11 +179,14 @@
 											<td></td>
 										</tr>
 										<tr>
-											<td colspan="2" style="font-family: MonotypeCorsiva;"><h3 class="display-4">Atentamente,</h3></td>
+											<td colspan="2" class="single-line" style="font-family: MonotypeCorsiva; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+												<h1 style="display: inline; color: black; margin-left: 2vh">Atentamente; </h1>
+												<span style="display: inline-block; text-transform: uppercase; font-family: Georgia; color: #640717; font-size: xx-large;">
+													<?php echo $aviso['SUBTITULO'] ?>
+												</span>
+											</td>
 										</tr>
-			              				<tr align="center" >
-    	    	      						<td colspan="2" style="text-transform: uppercase; font-family: Georgia; color: #640717;"><h2><?php echo $aviso['SUBTITULO'] ?></h2></td>
-        	    		  				</tr>
+
             							<?php
 	    	      						}
 	    		        				?>

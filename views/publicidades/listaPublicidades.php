@@ -60,7 +60,7 @@
                 <td>Fecha </td>
                 <?php
                   if (isset($_SESSION['login_nombre'])){?>
-                  <td>Herramientas    </td>
+                  <td>Acciones</td>
                   
                 <?php }?>
               </tr>
@@ -102,8 +102,5 @@
         </center>
       </div>
     </section>
-    
-    <script src="public/css/js/jquery.js"></script>
-    <script src="public/css/js/bootstrap.js"></script>
   </body>
 </html>

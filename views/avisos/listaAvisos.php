@@ -127,9 +127,5 @@
           </table>
           </center>
         </section>
-
-      <script src="public/css/js/jquery.js"></script>
-      <script src="public/css/js/bootstrap.js"></script>
-
     </body>
 </html>

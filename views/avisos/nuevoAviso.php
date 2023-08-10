@@ -59,12 +59,13 @@
                 <div class="form-group col-md-6">
                     <label>Titulo: </label>
                     <input type="text" class="form-control" name="titulo" required>
-                    <div id="error-message-titulo" style="display: none; color: red;">El título no debe tener más de 42 caracteres</div>
+                    <div id="error-message-titulo" style="display: none; color: red;">El título no debe tener más de 45 caracteres</div>
                 </div>
               
                 <div class="form-group col-md-6">
                   <label>Autor: </label>
                   <input type="text" class="form-control" placeholder= "Opcional" name="subtitulo">
+                  <div id="error-message-autor" style="display: none; color: red;">El título no debe tener más de 35 caracteres</div>
                 </div>
               </div>
 
@@ -104,7 +105,7 @@
                 <div class="form-group col-md-12"> 
                   <label>Contenido: </label>
                   <textarea class="form-control" name="descripcion" rows="5" required=""></textarea>
-                  <div id="error-message-contenido" style="display: none; color: red;">El contenido no debe tener más de 330 caracteres</div>
+                  <div id="error-message-contenido" style="display: none; color: red;">El contenido no debe tener más de 280 caracteres</div>
                 </div> 
               </div>
 
@@ -125,12 +126,13 @@
 
             </form>
         </section>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
+        <script src="../../public/js/jquery.min.js"></script>
         <script>
           $(document).ready(function() {
             $("form").on('submit', function(event) {
               var titulo = $("input[name='titulo']").val();
-              if(titulo.length > 42){
+              if(titulo.length > 45){
                 event.preventDefault(); 
                 $("#error-message-titulo").show();
               } else {
@@ -138,11 +140,19 @@
               }
 
               var descripcion = $("textarea[name='descripcion']").val();
-              if(descripcion.length > 330){
+              if(descripcion.length > 280){
                 event.preventDefault(); 
                 $("#error-message-contenido").show();
               } else {
                 $("#error-message-contenido").hide();
+              }
+
+              var autor = $("input[name='subtitulo']").val();
+              if(autor.length > 35){
+                event.preventDefault(); 
+                $("#error-message-autor").show();
+              } else {
+                $("#error-message-autor").hide();
               }
             });
           });

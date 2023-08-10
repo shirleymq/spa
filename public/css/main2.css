@@ -40,6 +40,38 @@ body{
   margin-left: 0%;
 }
 
+.single-line {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center; /* Centra los elementos verticalmente */
+  justify-content: start; /* Alinea los elementos al inicio del contenedor */
+  font-family: MonotypeCorsiva; 
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis;
+}
+
+.atentamente-text {
+  color: black; 
+  margin-left: 2vh;
+  margin-right: 5px; /* Espacio entre 'Atentamente' y el subtítulo */
+  flex-shrink: 0; /* Evita que este elemento se reduzca */
+}
+
+.subtitulo-text {
+  text-transform: uppercase; 
+  font-family: Georgia; 
+  color: #640717; 
+
+  font-size: xx-large;
+  flex-shrink: 1; /* Permite que este elemento se reduzca si es necesario */
+}
+
 .azul{
   background:    #09073b  ;
 }
