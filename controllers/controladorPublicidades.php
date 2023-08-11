@@ -13,6 +13,12 @@ if(session_status() == PHP_SESSION_NONE){
 
 		$ubicacion= cargarArchivo();
 
+		// Si la respuesta de cargarArchivo() es un mensaje de error, lo mostramos
+		if (strpos($ubicacion, 'ERROR') !== false) {
+			$_SESSION['error_upload'] = $ubicacion;
+			header('Location: ../views/publicidades/nuevaPublicidad.php');
+			exit;
+		}
 
 		registrarImagen($titulo, $ubicacion);
 
@@ -96,24 +102,24 @@ if(session_status() == PHP_SESSION_NONE){
 			$ext_correcta   = in_array($ext_archivo, $ext_permitidas);
 			$tam_max        = 1.5 * 1024;
 
-			if ($ext_correcta && ($tamaño <= $tam_max)) {
-				if ($_FILES['archivo']['error'] > 0) {
-					echo "Error ". $_FILES['archivo']['error'];
-				} else {
-					if (file_exists($ruta_archivos.$nombre)) {
-						echo 'ERROR ARCHIVO YA CARGADO, VUELVA A INTENTAR
-						  <a href="../views/publicidad/nuevaPublicidad.php">formulario de publicidad nuevo</a>';
-					} else {
-						move_uploaded_file($nombre_tmp, $ruta_archivos.$nombre);
-						return 'uploads/img_publicidad/'.$nombre;
-					}
-				}
-			} else {
-				echo 'ERROR DE EXTENSION, 
-				     SELECCIONE UN ARCHIVO CON EXTENSION:
-				     jpg, jpeg, png <br>
-						<a href="../views/publicidades/nuevaPublicidad.php">formulario de publicidad nuevo</a>';
+			if (!$ext_correcta) {
+				return 'ERROR DE EXTENSION, SELECCIONE UN ARCHIVO CON EXTENSION: jpg, jpeg, png';
 			}
+
+			if($tamaño > $tam_max){
+				return 'ERROR DE TAMAÑO, EL TAMAÑO MAXIMO PERMITIDO ES DE 1.5 MB.';
+			}
+	
+			if ($_FILES['archivo']['error'] > 0) {
+				return "ERROR ". $_FILES['archivo']['error'];
+			}
+	
+			if (file_exists($ruta_archivos.$nombre)) {
+				return 'ERROR AL CARGAR ARCHIVO, YA EXISTE UN ARCHIVO CON EL MISMO NOMBRE';
+			}
+	
+			move_uploaded_file($nombre_tmp, $ruta_archivos.$nombre);
+			return 'uploads/img_publicidad/'.$nombre;
 
 		} else {
 			header('Location: ../views/publicidades/nuevaPublicidad.php');
