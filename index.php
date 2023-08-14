@@ -214,7 +214,7 @@ include('controllers/controladorPublicidades.php');
 													<td></td>
 												</tr>
 												<tr>
-													<td colspan="2" class="single-line"
+													<td colspan="2" class="una-linea"
 														style="font-family: MonotypeCorsiva; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
 														<h1 style="display: inline; color: black; margin-left: 2vh">Atentamente;
 														</h1>
@@ -257,7 +257,7 @@ include('controllers/controladorPublicidades.php');
 
 														foreach ($palabras as $palabra) {
 															if (strlen($palabra) > 9) {
-																$clase = 'vertical-text';
+																$clase = 'texto-vertical';
 																break;
 															}
 														}
