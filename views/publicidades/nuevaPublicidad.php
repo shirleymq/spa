@@ -74,14 +74,13 @@ validarSesion();
       <input type="file" name="archivo" required><br>
       <?php
       if (session_status() == PHP_SESSION_NONE) {
-        // session hasn't started
         session_start();
       }
 
       // Si hay un mensaje de error, lo mostramos
       if (isset($_SESSION['error_upload'])) {
         echo '<div style="color: red;">' . $_SESSION['error_upload'] . '</div>';
-        unset($_SESSION['error_upload']); // Borramos el mensaje de error después de mostrarlo
+        unset($_SESSION['error_upload']); 
       }
       ?>
 

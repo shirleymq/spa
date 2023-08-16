@@ -68,7 +68,7 @@ validarSesion();
         <div class="form-group col-md-6">
           <label>Autor: </label>
           <input type="text" class="form-control" placeholder="Opcional" name="subtitulo">
-          <div id="error-message-autor" style="display: none; color: red;">El título no debe tener más de 35 caracteres
+          <div id="error-message-autor" style="display: none; color: red;">El autor no debe tener más de 35 caracteres
           </div>
         </div>
       </div>

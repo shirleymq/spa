@@ -272,7 +272,7 @@ include('controllers/controladorPublicidades.php');
 											</table>
 										</div>
 										<div class="col-md-8 sin-separacion" style="height: 85vh;">
-											<img class="d-block img-border" width="100%" height="100%"
+											<img class="d-block borde-img" width="100%" height="100%"
 												src="<?php echo $imagen['ubicacion'] ?>">
 										</div>
 									<?php } else { ?>

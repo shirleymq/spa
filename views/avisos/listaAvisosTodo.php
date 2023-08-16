@@ -114,7 +114,7 @@ validarSesion();
                 <?php
                 if (isset($_SESSION['login_nombre'])) { ?>
                   <td>
-                    <a href="editar.php?codAviso=<?php echo $aviso['CODAVISO'] ?>"
+                    <a href="editarAviso.php?codAviso=<?php echo $aviso['CODAVISO'] ?>"
                       class="btn btn-outline-warning">Editar</a>
                     <p></p>
                     <!--<a href="../../controllers/controladorAvisos.php?

@@ -48,6 +48,11 @@ body{
   height: 11em;
 }
 
+.borde-img{
+  border-left: 1px solid rgba(0, 0, 0, 0.834);
+  box-shadow: -8px 0 5px -2px rgba(0, 0, 0, 0.245);
+}
+
 .azul{
   background:    #09073b  ;
 }

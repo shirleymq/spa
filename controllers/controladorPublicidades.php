@@ -1,29 +1,21 @@
 <?php 
 if(session_status() == PHP_SESSION_NONE){
-    // session hasn't started
     session_start();
 }?>
 <?php
 	require_once('conexionDB.php');
 
 	if (isset($_REQUEST['registrar'])) {
-		
 		$titulo		    = $_REQUEST['titulo'];
-		//$fecha_hora   = $_REQUEST['fecha_hora'];
+		$ubicacion		= cargarArchivo();
 
-		$ubicacion= cargarArchivo();
-
-		// Si la respuesta de cargarArchivo() es un mensaje de error, lo mostramos
-		if (strpos($ubicacion, 'ERROR') !== false) {
+		if (strpos($ubicacion, 'Error') !== false) {
 			$_SESSION['error_upload'] = $ubicacion;
 			header('Location: ../views/publicidades/nuevaPublicidad.php');
 			exit;
 		}
-
 		registrarImagen($titulo, $ubicacion);
-
 		header('Location: ../');
-		
 	}
 
 	if (isset($_REQUEST['eliminar'])) {
@@ -103,19 +95,19 @@ if(session_status() == PHP_SESSION_NONE){
 			$tam_max        = 1.5 * 1024;
 
 			if (!$ext_correcta) {
-				return 'ERROR DE EXTENSION, SELECCIONE UN ARCHIVO CON EXTENSION: jpg, jpeg, png';
+				return 'Error de extension: seleccione un archivo con extension: jpg, jpeg, png';
 			}
 
 			if($tamaño > $tam_max){
-				return 'ERROR DE TAMAÑO, EL TAMAÑO MAXIMO PERMITIDO ES DE 1.5 MB.';
+				return 'Error de tamaño: el tamaño maximo permitido es de 1.5 MB.';
 			}
 	
 			if ($_FILES['archivo']['error'] > 0) {
-				return "ERROR ". $_FILES['archivo']['error'];
+				return "Error: ". $_FILES['archivo']['error'];
 			}
 	
 			if (file_exists($ruta_archivos.$nombre)) {
-				return 'ERROR AL CARGAR ARCHIVO, YA EXISTE UN ARCHIVO CON EL MISMO NOMBRE';
+				return 'Error al cargar el archivo, ya existe un archivo con el mismo nombre';
 			}
 	
 			move_uploaded_file($nombre_tmp, $ruta_archivos.$nombre);
