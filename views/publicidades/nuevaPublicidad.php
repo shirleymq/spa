@@ -70,8 +70,11 @@ validarSesion();
         </div>
       </div>
 
-      <label>Imagen</label>
-      <input type="file" name="archivo" required><br>
+      <label>Imagen: </label>
+      <br>
+      <input type="file" name="archivo" required>
+      <br>
+      
       <?php
       if (session_status() == PHP_SESSION_NONE) {
         session_start();
@@ -83,7 +86,7 @@ validarSesion();
         unset($_SESSION['error_upload']); 
       }
       ?>
-
+      <br>
       <input type="submit" name="registrar" value="Guardar" class="btn btn-success">
     </form>
   </section>
