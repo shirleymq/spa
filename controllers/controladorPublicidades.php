@@ -1,18 +1,21 @@
+<?php 
+if(session_status() == PHP_SESSION_NONE){
+    session_start();
+}?>
 <?php
 	require_once('conexionDB.php');
 
 	if (isset($_REQUEST['registrar'])) {
-		
 		$titulo		    = $_REQUEST['titulo'];
-		//$fecha_hora   = $_REQUEST['fecha_hora'];
+		$ubicacion		= cargarArchivo();
 
-		$ubicacion= cargarArchivo();
-
-
+		if (strpos($ubicacion, 'Error') !== false) {
+			$_SESSION['error_upload'] = $ubicacion;
+			header('Location: ../views/publicidades/nuevaPublicidad.php');
+			exit;
+		}
 		registrarImagen($titulo, $ubicacion);
-
-		header('Location: ../index.php');
-		
+		header('Location: ../');
 	}
 
 	if (isset($_REQUEST['eliminar'])) {
@@ -91,24 +94,24 @@
 			$ext_correcta   = in_array($ext_archivo, $ext_permitidas);
 			$tam_max        = 1.5 * 1024;
 
-			if ($ext_correcta && ($tamaño <= $tam_max)) {
-				if ($_FILES['archivo']['error'] > 0) {
-					echo "Error ". $_FILES['archivo']['error'];
-				} else {
-					if (file_exists($ruta_archivos.$nombre)) {
-						echo 'ERROR ARCHIVO YA CARGADO, VUELVA A INTENTAR
-						  <a href="../views/publicidad/nuevaPublicidad.php">formulario de publicidad nuevo</a>';
-					} else {
-						move_uploaded_file($nombre_tmp, $ruta_archivos.$nombre);
-						return 'uploads/img_publicidad/'.$nombre;
-					}
-				}
-			} else {
-				echo 'ERROR DE EXTENCION, 
-				     SELECCIONE UN ARCHIVO CON EXTENCION:
-				     jpg, jpeg, png <br>
-						<a href="../views/publicidades/nuevaPublicidad.php">formulario de publicidad nuevo</a>';
+			if (!$ext_correcta) {
+				return 'Error de extension: seleccione un archivo con extension: jpg, jpeg, png';
 			}
+
+			if($tamaño > $tam_max){
+				return 'Error de tamaño: el tamaño maximo permitido es de 1.5 MB.';
+			}
+	
+			if ($_FILES['archivo']['error'] > 0) {
+				return "Error: ". $_FILES['archivo']['error'];
+			}
+	
+			if (file_exists($ruta_archivos.$nombre)) {
+				return 'Error al cargar el archivo, ya existe un archivo con el mismo nombre';
+			}
+	
+			move_uploaded_file($nombre_tmp, $ruta_archivos.$nombre);
+			return 'uploads/img_publicidad/'.$nombre;
 
 		} else {
 			header('Location: ../views/publicidades/nuevaPublicidad.php');

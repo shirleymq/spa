@@ -8,10 +8,7 @@ validarSesion();
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="../../public/css/css/bootstrap.min.css">
-
-  <title>Nuevo</title>
+  <title>Editar</title>
 
   <link rel="stylesheet" type="text/css" href="../../public/bootstrap/bootstrap.min.css">
   <link type="text/css" rel="stylesheet" href="../../public/css/tablas.css" />
@@ -35,13 +32,12 @@ validarSesion();
       <div class="collapse navbar-collapse position-sticky" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-item nav-link active" href="../../index.php">
-            <button class="btn btn-sm btn-outline-secondary" style="color:white;">Inicio</button>
+            Inicio
             <span class="sr-only">(current)</span>
           </a>
+
           <a class="nav-item nav-link active" href="listaAvisos.php">
-            <button class="btn btn-sm btn-outline-secondary" style="color:white;">
-              Avisos
-            </button>
+            Avisos
             <span class="sr-only">(current)</span>
           </a>
 
@@ -51,64 +47,71 @@ validarSesion();
   </header>
 
   <section class="container">
-    <h1 align="center">NUEVO AVISO</h1><br />
+    <h1 align="center">EDITAR AVISO</h1><br />
 
+    <?php
+    $aviso = obtenerAviso($_REQUEST['codAviso']);
+    ?>
 
-    <form action="../../controllers/controladorAvisos.php" method="POST" enctype="multipart/form-data">
-
-
+    <form action="../../controllers/controladorAvisos.php" method="POST" enctype="multipart/form-data"
+      class="form-horizontal">
       <div class="form-row">
+
         <div class="form-group col-md-6">
           <label>Titulo: </label>
-          <input type="text" class="form-control" name="titulo" required>
+          <input type="text" class="form-control" name="titulo" value="<?php echo $aviso['TITULO'] ?>" required>
           <div id="error-message-titulo" style="display: none; color: red;">El título no debe tener más de 45 caracteres
           </div>
         </div>
 
+
         <div class="form-group col-md-6">
           <label>Autor: </label>
-          <input type="text" class="form-control" placeholder="Opcional" name="subtitulo">
-          <div id="error-message-autor" style="display: none; color: red;">El autor no debe tener más de 35 caracteres
+          <input type="text" class="form-control" placeholder="Opcional" name="subtitulo"
+            value="<?php echo $aviso['SUBTITULO'] ?>">
+          <div id="error-message-autor" style="display: none; color: red;">El título no debe tener más de 35 caracteres
           </div>
         </div>
       </div>
 
-
       <div class="form-row">
         <div class="form-group col-md-6">
-
           <label>Docente: </label>
           <select class="form-control" name="docente">
-
+            <option value="<?php echo $aviso['IDDOC'] ?>"><?php echo $aviso['APELLIDODOC'] . ' ' . $aviso['NOMBREDOC'] ?>
+            </option>
             <?php
-            $docentes = listaDocentes();
-            foreach ($docentes as $docente):
+              $docentes = listaDocentes();
+              foreach ($docentes as $docente):
               ?>
-              <option value="<?php echo $docente['IDDOC'] ?>"><?php echo $docente['APELLIDODOC'] . ' ' . $docente['NOMBREDOC'] ?></option>
-            <?php endforeach; ?>
+                  <option value="<?php echo $docente['IDDOC'] ?>"><?php echo $docente['APELLIDODOC'].' '.$docente['NOMBREDOC'] ?></option>
+              <?php endforeach; ?>
           </select>
         </div>
-        <div class="form-group col-md-6">
 
+        <div class="form group col-md-6">
+          <!--<input type="text" class="form-control" name="materia" value="<?php echo $aviso['CODMAT'] ?>"><br>-->
           <label>Materia: </label>
           <select class="form-control" name="materia">
+            <option value="<?php echo $aviso['CODMAT'] ?>"><?php echo $aviso['NOMBREMAT'] ?></option>
 
             <?php
             $materias = listaMaterias();
             foreach ($materias as $materia):
               ?>
-              <!--<td><?php echo $materia['NOMBREMAT'] ?></td>-->
               <option value="<?php echo $materia['CODMAT'] ?>"> <?php echo $materia['NOMBREMAT'] ?> </option>
             <?php endforeach; ?>
           </select>
         </div>
+
       </div>
 
-
       <div class="form-row">
+
         <div class="form-group col-md-12">
           <label>Contenido: </label>
-          <textarea class="form-control" name="descripcion" rows="5" required=""></textarea>
+          <textarea class="form-control" name="descripcion" rows="5" cols="75"
+            required=""><?php echo $aviso['CONTENIDO'] ?></textarea>
           <div id="error-message-contenido" style="display: none; color: red;">El contenido no debe tener más de 280
             caracteres</div>
         </div>
@@ -127,8 +130,13 @@ validarSesion();
       </div>
 
       <input type="hidden" name="idUser" value="<?php echo $_SESSION['login_id'] ?>">
-      <input type="submit" name="guardar" value="Guardar" class="btn btn-outline-success">
 
+      <input type="hidden" name="fecha" value="<?php echo $aviso['FECHA_HORA'] ?>">
+
+      <input type="hidden" name="codAviso" value="<?php echo $aviso['CODAVISO'] ?>">
+
+
+      <input type="submit" name="editar" value="Guardar" class="btn btn-success">
     </form>
   </section>
 

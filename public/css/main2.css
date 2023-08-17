@@ -11,20 +11,63 @@ body{
   padding: 0;
 
 }
+
 .sin_padding{
 	padding: 0;
 }
+
+.titulo-aviso {
+  text-transform: uppercase;
+  font-family: Georgia;
+  background: #ccd1d1;
+}
+
+.fondo-avisos{
+  background: linear-gradient(to right, #dfdede, white);
+}
+
+.fondo-titulo-img{
+  background: linear-gradient(to left, #bcc1c1 65%, #e0e7e7 93%, white 100%);
+}
+
+.sin-separacion{
+  padding-left: 0%;
+  margin-left: 0%;
+}
+
+.una-linea {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.texto-vertical {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-align: center;
+  height: 11em;
+}
+
+.borde-img{
+  border-left: 1px solid rgba(0, 0, 0, 0.834);
+  box-shadow: -8px 0 5px -2px rgba(0, 0, 0, 0.245);
+}
+
 .azul{
   background:    #09073b  ;
 }
 
-
+.text-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
 
 nav li {
   color: white;
   cursor: pointer;
 }
-
 
 .footer{
   width: 100%;
@@ -32,6 +75,7 @@ nav li {
   position: fixed;
 
 }
+
 .degradado{
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#380137+0,8f0222+44,8f0222+56,380137+100 */
 background: #380137; /* Old browsers */
